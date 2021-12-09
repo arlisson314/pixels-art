@@ -1,0 +1,11 @@
+.color {
+    border: solid 1px;
+}
+
+ul {
+    display: block;
+}
+
+li {
+    display: inline-block;
+}
