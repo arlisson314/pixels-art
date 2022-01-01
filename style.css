@@ -1,13 +1,17 @@
 #title {
     text-align: center;
+    
 }
 
 .color {
     border: solid 1px;
 }
-
+ #section {
+     display: flex;
+     justify-content: center;
+ }
 ul {
-    text-align: center;
+    
     display: block;
 }
 
