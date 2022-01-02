@@ -17,3 +17,13 @@
     display: inline-block;
     border-radius: 50%;
   }
+
+  #botão {
+    display: flex;
+    justify-content: center;
+  }
+
+  #limpar {
+    margin-top: 30px;
+    margin-left:  35px;
+  }
