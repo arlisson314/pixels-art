@@ -1,10 +1,18 @@
 let corSeletor = document.querySelector('.selected');
 let corSelecionada = corSeletor.style.backgroundColor;
-let corElemento = document.querySelectorAll('.color');
+const corElemento = document.querySelectorAll('.color');
 
 function seletorDeCores(event) {
-    const corAntigaSeletor = corSeletor.classList.remove('selected');
-    const corNovaSeletor = event.target.classList.add('selected');
-    corSeletor = corNovaSeletor;
-    corSelecionada = corNovaSeletor.style.backgroundColor;
-};
+  const corAntigaSeletor = corSeletor;
+  corAntigaSeletor.classList.remove('selected');
+
+  const corNovoSeletor = event.target;
+  corNovoSeletor.classList.add('selected');
+
+  corSeletor = corNovoSeletor;
+  corSelecionada = corNovoSeletor.style.backgroundColor;
+}
+
+for (let index = 0; index < corElemento.length; index += 1) {
+  corElemento[index].addEventListener('click', seletorDeCores);
+}
