@@ -29,3 +29,13 @@ function paintPixel(event) {
 for (let index = 0; index < pixelElemento.length; index += 1) {
   pixelElemento[index].addEventListener('click', paintPixel);
 }
+
+const clearBoard = document.getElementById('clear-board');
+
+function limpar() {
+  for (let index = 0; index < pixelElemento.length; index += 1) {
+    pixelElemento[index].style.backgroundColor = 'white';
+  }
+}
+
+clearBoard.addEventListener('click', limpar);
