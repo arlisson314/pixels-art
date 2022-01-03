@@ -1,4 +1,6 @@
 let corSeletor = document.querySelector('.selected');
+let body = document.getElementsByTagName('body')[0];
+body.style.background = 'linear-gradient(68.15deg, #2F2325 16.62%, #8E5D52 85.61%)';
 let corSelecionada = corSeletor.style.backgroundColor;
 const corElemento = document.querySelectorAll('.color');
 
