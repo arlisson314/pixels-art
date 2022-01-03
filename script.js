@@ -16,3 +16,14 @@ function seletorDeCores(event) {
 for (let index = 0; index < corElemento.length; index += 1) {
   corElemento[index].addEventListener('click', seletorDeCores);
 }
+
+const pixelElemento = document.querySelectorAll('.pixel');
+
+function paintPixel(event) {
+  const pixelElementoPaint = event.target;
+  pixelElementoPaint.style.backgroundColor = corSelecionada;
+}
+
+for (let index = 0; index < pixelElemento.length; index += 1) {
+  pixelElemento[index].addEventListener('click', paintPixel);
+}
