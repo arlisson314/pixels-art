@@ -8,59 +8,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 id="title">"Paleta de Cores".</h1>
-        
-    </header>
+  <header>
+    <h1 id="title">"Paleta de Cores".</h1>
+  </header>
+ 
+  <div id="color-palette">
+    <div class="color selected" style="background-color: black;"></div>
+    <div class="color" style="background-color: lightblue;"></div>
+    <div class="color" style="background-color: darkolivegreen;"></div>
+    <div class="color" style="background-color: blue;"></div>
+  </div>
 
+  <div class="form-container">
+    <form #form>
+      <input
+        id="board-size"
+        type="number"
+        name="color"
+        min="1"
+        max='50'
+      >
+      <button
+        id="generate-board"
+        type='submit'
+      >
+        VQV
+      </button>
+    </form>
+  </div>
+  <div id="clear-board-container">
+    <button id="clear-board">Limpar</button>
+  </div>
 
-        <div id="color-palette">
-            <div class="color selected" style="background-color: black;"></div>
-            <div class="color" style="background-color: lightblue;"></div>
-            <div class="color" style="background-color: darkolivegreen;"></div>
-            <div class="color" style="background-color: pink;"></div>
-        </div>
+  <div id="pixel-board" class='pixel-board'>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+    <div class="pixel"></div>
+  </div>
 
-        <div id="botão">
-
-        <button id="clear-board">Limpar</button>
-
-        </div>
-
-        <div id="pixel-board">
-            
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-
-        </div>
-        
-       
-
-    
-    
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
