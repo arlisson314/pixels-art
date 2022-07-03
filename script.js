@@ -9,24 +9,6 @@ const input = document.getElementById('board-size');
 const btnForm = document.getElementById('generate-board');
 let corSelecionada = corSeletor.style.backgroundColor;
 
-function inputForm(event) {
-  event.preventDefault();
-  const pixelContainer = document.getElementById('pixel-board');
-  pixelContainer.innerHTML = '';
-  if (input.value !== '') {
-    for (let i = 1; i <= input.value ** 2; i += 1) {
-      const div = document.createElement('div');
-      div.classList.add('pixel');
-      div.style.background = 'white';
-      pixelContainer.appendChild(div);
-    }
-  } else {
-    alert('Board inválido!');
-  }
-  input.value = '';
-}
-btnForm.addEventListener('click', inputForm);
-
 function seletorDeCores(event) {
   const corAntigaSeletor = corSeletor;
   corAntigaSeletor.classList.remove('selected');
@@ -48,6 +30,7 @@ function paintPixel(event) {
 }
 
 for (let index = 0; index < pixelElemento.length; index += 1) {
+  console.log(pixelElemento[index]);
   pixelElemento[index].addEventListener('click', paintPixel);
 }
 
@@ -57,3 +40,21 @@ function limpar() {
   }
 }
 btnClearBoard.addEventListener('click', limpar);
+
+function inputForm(e) {
+  e.preventDefault();
+  const pixelContainer = document.getElementById('pixel-board');
+  pixelContainer.innerHTML = '';
+  if (input.value !== '') {
+    for (let i = 1; i <= input.value ** 2; i += 1) {
+      const div = document.createElement('div');
+      div.classList.add('pixel');
+      pixelContainer.appendChild(div);
+    }
+  } else {
+    alert('Board inválido!');
+  }
+  input.value = '';
+}
+
+btnForm.addEventListener('click', inputForm);
