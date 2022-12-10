@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixels Art</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixels Art</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <h1 id="title">"Paleta de Cores".</h1>
   </header>
- 
+
   <div id="color-palette">
     <div class="color selected" style="background-color: black;"></div>
     <div class="color" style="background-color: lightblue;"></div>
@@ -21,17 +23,8 @@
 
   <div class="form-container">
     <form #form>
-      <input
-        id="board-size"
-        type="number"
-        name="color"
-        min="1"
-        max= "50"
-      >
-      <button
-        id="generate-board"
-        type='submit'
-      >
+      <input id="board-size" type="number" name="color" min="1" max="50">
+      <button id="generate-board" type='submit'>
         VQV
       </button>
     </form>
@@ -68,7 +61,7 @@
     <div class="pixel"></div>
     <div class="pixel"></div>
   </div>
-
   <script src="script.js"></script>
 </body>
+
 </html>
