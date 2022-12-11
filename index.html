@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixels Art</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="newStyle.css">
 </head>
 
@@ -15,7 +16,7 @@
     <h1 id="title">"Paleta de Cores".</h1>
   </header>
 
-  <div id="color-palette">
+  <div id="color-palette" class="color-palette">
     <div class="color selected" style="background-color: black;"></div>
     <div class="color" style="background-color: lightblue;"></div>
     <div class="color" style="background-color: darkolivegreen;"></div>
@@ -23,20 +24,17 @@
   </div>
 
   <div class="form-container">
-    <form #form>
-      <input id="board-size" type="number" name="color" min="1" max="50">
-      <button id="generate-board" type='submit'>
+    <form class="form">
+      <input id="board-size" class="form-control" type="number" name="color" min="1" max="10">
+      <button id="generate-board" type="button" class="btn btn-success">
         VQV
       </button>
     </form>
   </div>
 
-  <div>
-    <button type='button' id='refresh'>refresh colors</button>
-  </div>
-
-  <div id="clear-board-container">
-    <button id="clear-board">Limpar</button>
+  <div id="clear-board-container" class="clear-board-container">
+    <button type='button' id='refresh' class="btn btn-info">Refresh</button>
+    <button type="button" id="clear-board" class="btn btn-danger">Limpar</button>
   </div>
 
   <div id="pixel-board" class='pixel-board' style='width: 200px;height: 200px;'>

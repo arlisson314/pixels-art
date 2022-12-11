@@ -1,6 +1,3 @@
-const body = document.getElementsByTagName('body')[0];
-body.style.background = 'linear-gradient(88.15deg, #2F2325 16.62%, #8E5D52 85.61%)';
-
 const allColors = document.getElementsByClassName('color');
 const pixelElemento = document.getElementsByClassName('pixel');
 const btnClearBoard = document.getElementById('clear-board');
