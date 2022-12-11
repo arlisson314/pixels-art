@@ -13,6 +13,14 @@ body {
   background-image: url("image/sa_pixar_virtualbg_toystory_16x9_8461039f.webp");
 }
 
+.title {
+  color: transparent;
+  -webkit-text-stroke-color: lightblue;
+  -webkit-text-stroke-width: 1px;
+  width: 100;
+  text-shadow: 0 0 7px red;
+}
+
 .color-palette {
   display: flex;
   align-items: center;
