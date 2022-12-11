@@ -7,9 +7,10 @@ const btnClearBoard = document.getElementById('clear-board');
 const input = document.getElementById('board-size');
 const btnForm = document.getElementById('generate-board');
 const btnRefreshColors = document.getElementById('refresh')
+const pixelContainer = document.getElementById('pixel-board');
+const corSeletor = document.querySelector('.selected');
+const colorPalet = document.getElementsByClassName('color')
 
-let corSeletor = document.querySelector('.selected');
-let colorPalet = document.getElementsByClassName('color')
 let corSelecionada = corSeletor.style.backgroundColor;
 
 function geradorDeCores() {
@@ -20,56 +21,72 @@ function geradorDeCores() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-function mudarCores() {
-  return Array.from(colorPalet).map(({style}) => style.backgroundColor = geradorDeCores());
-}
-btnRefreshColors.addEventListener('click', mudarCores)
+function seletorDeCores({target}) {
+  corSeletor.classList.remove('selected');
+  target.classList.add('selected');
 
-function seletorDeCores(event) {
-  const corAntigaSeletor = corSeletor;
-  corAntigaSeletor.classList.remove('selected');
-
-  const corNovoSeletor = event.target;
-  corNovoSeletor.classList.add('selected');
-
-  corSeletor = corNovoSeletor;
-  corSelecionada = corSeletor.style.backgroundColor;
-}
+  return corSelecionada = target.style.backgroundColor;
+};
 
 for (let index = 0; index < allColors.length; index += 1) {
   allColors[index].addEventListener('click', seletorDeCores);
-}
+};
 
-function paintPixel(event) {
-  const pixelElementoPaint = event.target;
-  pixelElementoPaint.style.backgroundColor = corSelecionada;
-}
+function paintPixel({target}) {
+  return target.style.backgroundColor = corSelecionada;
+};
 
 for (let index = 0; index < pixelElemento.length; index += 1) {
   pixelElemento[index].addEventListener('click', paintPixel);
+};
+
+const test = () => {
+  for (let index = 0; index < pixelElemento.length; index += 1) {
+    pixelElemento[index].addEventListener('click', paintPixel);
+  };
 }
 
 function limpar() {
   for (let index = 0; index < pixelElemento.length; index += 1) {
     pixelElemento[index].style.backgroundColor = 'white';
-  }
-}
+  };
+  return;
+};
 btnClearBoard.addEventListener('click', limpar);
+
+const generatPixel = () => {
+  const larguraContainer = Number(pixelContainer.style.width.slice(0,3))/Number(input.value);
+  const alturaContainer = Number(pixelContainer.style.height.slice(0,3))/Number(input.value);
+
+  const div = document.createElement('div');
+
+  div.classList.add('pixel');
+  div.setAttribute('onClick', "test()");
+  div.setAttribute('style', `width: ${larguraContainer}px; height: ${alturaContainer}px;` );
+  return div;
+}
 
 function inputForm(e) {
   e.preventDefault();
-  const pixelContainer = document.getElementById('pixel-board');
+  const documentFragment = document.createDocumentFragment();
+
   input.value > 0 ? pixelContainer.innerHTML = '' : pixelContainer;
+  input.value > 10 ? input.value = 10 : input.value;
 
   if (input.value !== '' && input.value > 0) {
     for (let i = 1; i <= input.value ** 2; i += 1) {
-      const div = document.createElement('div');
-      div.classList.add('pixel');
-      pixelContainer.appendChild(div);
+      documentFragment.append(generatPixel());
     }
   } else {
     alert('Board inválido!');
   }
+  pixelContainer.append(documentFragment);
+  test();
   input.value = '';
 }
 btnForm.addEventListener('click', inputForm);
+
+function mudarCores() {
+  return Array.from(colorPalet).map(({style}) => style.backgroundColor = geradorDeCores());
+};
+btnRefreshColors.addEventListener('click', mudarCores);
