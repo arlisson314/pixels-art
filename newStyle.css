@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -14,11 +16,14 @@ body {
 }
 
 .title {
-  color: transparent;
   -webkit-text-stroke-color: lightblue;
+  font-family: "Great Vibes", cursive;
   -webkit-text-stroke-width: 1px;
+  /* text-shadow: 0 0 7px red; */
+  color: transparent;
   width: 100;
-  text-shadow: 0 0 7px red;
+  font-weight: bold;
+  font-size: 3.1em;
 }
 
 .color-palette {
@@ -96,6 +101,7 @@ body {
 
 .btn-danger {
   height: 70.5%;
+  width: 40%;
   line-height: 100%;
 }
 

@@ -3,12 +3,15 @@ const pixelElemento = document.getElementsByClassName('pixel');
 const btnClearBoard = document.getElementById('clear-board');
 const input = document.getElementById('board-size');
 const btnForm = document.getElementById('generate-board');
-const btnRefreshColors = document.getElementById('refresh')
+const btnRefreshColors = document.getElementById('refresh');
 const pixelContainer = document.getElementById('pixel-board');
 const corSeletor = document.querySelector('.selected');
-const colorPalet = document.getElementsByClassName('color')
+const colorPalet = document.getElementsByClassName('color');
+const title = document.querySelector('.title');
 
 let corSelecionada = corSeletor.style.backgroundColor;
+
+// console.log(title.style.color);
 
 function geradorDeCores() {
   const r = Math.floor(Math.random() * 255);
@@ -16,7 +19,12 @@ function geradorDeCores() {
   const b = Math.floor(Math.random() * 255);
   
   return `rgb(${r}, ${g}, ${b})`;
-}
+};
+
+function alterarCorText() {
+   title.style.textShadow = `0 0 7px ${geradorDeCores()}`;
+};
+setInterval(alterarCorText, 500);
 
 function seletorDeCores({target}) {
   corSeletor.classList.remove('selected');
