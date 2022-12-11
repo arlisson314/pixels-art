@@ -22,7 +22,7 @@ function geradorDeCores() {
 };
 
 function alterarCorText() {
-   title.style.textShadow = `0 0 7px ${geradorDeCores()}`;
+  title.style.textShadow = `0 0 7px ${geradorDeCores()}`;
 };
 setInterval(alterarCorText, 500);
 
