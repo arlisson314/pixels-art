@@ -36,15 +36,12 @@ function paintPixel({target}) {
   return target.style.backgroundColor = corSelecionada;
 };
 
-for (let index = 0; index < pixelElemento.length; index += 1) {
-  pixelElemento[index].addEventListener('click', paintPixel);
-};
 
-const test = () => {
+function alterarCores() {
   for (let index = 0; index < pixelElemento.length; index += 1) {
     pixelElemento[index].addEventListener('click', paintPixel);
   };
-}
+};
 
 function limpar() {
   for (let index = 0; index < pixelElemento.length; index += 1) {
@@ -61,7 +58,6 @@ const generatPixel = () => {
   const div = document.createElement('div');
 
   div.classList.add('pixel');
-  div.setAttribute('onClick', "test()");
   div.setAttribute('style', `width: ${larguraContainer}px; height: ${alturaContainer}px;` );
   return div;
 }
@@ -81,7 +77,7 @@ function inputForm(e) {
     alert('Board inválido!');
   }
   pixelContainer.append(documentFragment);
-  test();
+  alterarCores();
   input.value = '';
 }
 btnForm.addEventListener('click', inputForm);
@@ -90,3 +86,5 @@ function mudarCores() {
   return Array.from(colorPalet).map(({style}) => style.backgroundColor = geradorDeCores());
 };
 btnRefreshColors.addEventListener('click', mudarCores);
+
+window.onload = () => alterarCores();

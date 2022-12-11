@@ -35,10 +35,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-content: center; */
   box-sizing: border-box;
-  /* width: 240px;
-  height: 240px; */
 }
 
 .pixel {
