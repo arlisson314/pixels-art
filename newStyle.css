@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +18,6 @@ body {
   -webkit-text-stroke-color: lightblue;
   font-family: "Great Vibes", cursive;
   -webkit-text-stroke-width: 1px;
-  /* text-shadow: 0 0 7px red; */
   color: transparent;
   width: 100;
   font-weight: bold;

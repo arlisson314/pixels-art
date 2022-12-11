@@ -24,7 +24,7 @@ function geradorDeCores() {
 function alterarCorText() {
   title.style.textShadow = `0 0 7px ${geradorDeCores()}`;
 };
-setInterval(alterarCorText, 500);
+setInterval(alterarCorText, 1000);
 
 function seletorDeCores({target}) {
   corSeletor.classList.remove('selected');
