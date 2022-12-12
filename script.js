@@ -11,8 +11,6 @@ const title = document.querySelector('.title');
 
 let corSelecionada = corSeletor.style.backgroundColor;
 
-// console.log(title.style.color);
-
 function geradorDeCores() {
   const r = Math.floor(Math.random() * 255);
   const g = Math.floor(Math.random() * 255);
@@ -79,7 +77,7 @@ function inputForm(e) {
       documentFragment.append(generatPixel());
     }
   } else {
-    alert('Board inválido!');
+    alert('Digite um valor entre 1 e 10!');
   }
   pixelContainer.append(documentFragment);
   alterarCores();

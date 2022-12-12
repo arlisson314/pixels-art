@@ -123,3 +123,7 @@ body {
   background-color: white;
   border: 1px solid black;
 }
+
+.pixel:hover {
+  cursor: pointer;
+}
